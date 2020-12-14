@@ -1,4 +1,16 @@
 <html lang="en" dir="ltr">
+		<script>
+			$(function(){
+				window.addEventListener('message', ev => {
+					switch (ev.data.type) {
+						case 'change':
+						var element = document.getElementById("ktabh");
+						element.innerHTML = event.data.change;
+							break;
+						}
+				});
+</script>
+
 	<head>
 		<style>
 		body {
@@ -15,6 +27,6 @@
 		</style>
 	</head>
 	<body>
-		<p>ggg</p>
+		<p id="ktabh" kk="Drift">gggg</p>
 	</body>
 </html>
