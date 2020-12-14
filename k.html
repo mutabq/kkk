@@ -1,17 +1,17 @@
 <html lang="en" dir="ltr">
-		<script>
-			$(function(){
-				window.addEventListener('message', ev => {
-					switch (ev.data.type) {
-						case 'change':
-						var element = document.getElementById("ktabh");
-						element.innerHTML = event.data.change;
-							break;
-						}
-				});
-</script>
 
 	<head>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script>
+    window.addEventListener("message", function(event) {
+        var item = event.data;
+
+        if (item.change) {
+			document.getElementById("ktabh").innerHTML = item.change;
+        }
+
+    });
+</script>
 		<style>
 		body {
 		background: rgba(0, 0, 0, 0) ;
