@@ -1,0 +1,33 @@
+<html lang="en" dir="ltr">
+
+	<head>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		<script>
+    window.addEventListener("message", function(event) {
+        var item = event.data;
+
+        if (item.change) {
+			document.getElementById("ktabh").innerHTML = item.change;
+        }
+
+    });
+</script>
+		<style>
+		body {
+		background: rgba(255, 0, 0, 255) ;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  font-size: 800%;
+			margin: 0 auto;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			width: 100%;
+		}
+		</style>
+	</head>
+	<body>
+		<p id="ktabh" kk="Drift">gggg</p>
+	</body>
+</html>
