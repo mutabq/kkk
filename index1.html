@@ -15,9 +15,10 @@
         var item = event.data;
         if (item.change) {
 			if validURL(item.change) {
-				document.getElementById("img").src = item.change;
-			else {
 				document.getElementById("ktabh").innerHTML = item.change;
+			else {
+				
+				document.getElementById("img").src = item.change;
 			}
 			};
 			
