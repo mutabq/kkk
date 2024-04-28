@@ -2,15 +2,13 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-	function isValidURL(str) {
-   var a  = document.createElement('a');
-   a.href = str;
-   return (a.host && a.host != window.location.host);
+function checkURL(url) {
+    return(url.match(/\.(jpeg|jpg|gif|png)$/) != null);
 }
 	window.addEventListener("message", function(event) {
         var item = event.data;
         if (item.change) {
-			if isValidURL(item.change) {
+			if checkURL(item.change) {
 				document.getElementById("img").src = item.change;
 			}else {
 				document.getElementById("ktabh").innerHTML = item.change;
