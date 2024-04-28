@@ -2,22 +2,15 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-	function isValidHttpUrl(string) {
-  let url;
-  
-  try {
-    url = new URL(string);
-  } catch (_) {
-    return false;  
-  }
-
-  return url.protocol === "http:" || url.protocol === "https:";
+	function isValidURL(str) {
+   var a  = document.createElement('a');
+   a.href = str;
+   return (a.host && a.host != window.location.host);
 }
-	
 	window.addEventListener("message", function(event) {
         var item = event.data;
         if (item.change) {
-			if isValidHttpUrl(item.change) {
+			if isValidURL(item.change) {
 				document.getElementById("img").src = item.change;
 			}else {
 				document.getElementById("ktabh").innerHTML = item.change;
