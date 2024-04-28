@@ -2,12 +2,26 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+	function validURL(str) {
+		var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+		'((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+		'((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+		'(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+		'(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+		'(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+		return !!pattern.test(str);
+	}
     window.addEventListener("message", function(event) {
         var item = event.data;
         if (item.change) {
-		document.getElementById("img").src = item.change;
-		document.getElementById("ktabh").innerHTML = item.change;
+			if validURL(item.change) {
+				document.getElementById("img").src = item.change;
+			}else {
+				document.getElementById("ktabh").innerHTML = item.change;
 			};
+			
+        }
+
     });
 </script>
 		<style>
@@ -22,6 +36,7 @@
 			justify-content: center;
 			height: 100%;
 			width: 100%;
+			background-color: transparent;
 			}
 		</style>
 	</head>
