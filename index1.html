@@ -2,20 +2,17 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
-function checkURL(url) {
-    return(url.match(/\.(jpeg|jpg|gif|png)$/) != null);
-}
-	window.addEventListener("message", function(event) {
+    window.addEventListener("message", function(event) {
         var item = event.data;
         if (item.change) {
-			if checkURL(item.change) {
+			if (item.typee == 'url') {
 				document.getElementById("img").src = item.change;
+				document.getElementById("ktabh").innerHTML = '';
 			}else {
 				document.getElementById("ktabh").innerHTML = item.change;
+				document.getElementById("img").src = '';
 			};
-			
         }
-
     });
 </script>
 		<style>
