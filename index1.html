@@ -11,6 +11,7 @@
 	    '(\\#[-a-z\\d_]*)?$','i'); // validate fragment locator
 	  return !!urlPattern.test(urlString);
 	}
+	
 	window.addEventListener("message", function(event) {
         var item = event.data;
         if (item.change) {
